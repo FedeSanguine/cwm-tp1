@@ -1,21 +1,8 @@
-// En este archivo vamos a definir los servicios de Firebase que vamos a utilizar, y exportarlos para ser
-// consumidos por otros servicios.
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"
+// Creamos la aplicación de Vue.
+import {createApp} from "vue";
+import App from "./src/App.vue";
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
-};
+const app = createApp(App);
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-
-// Obtener la instancia de Firestore.
-export const db = getFirestore(app);
-
+// Montamos la aplicación en el elemento #app que tenemos en el index.
+app.mount('#app');
