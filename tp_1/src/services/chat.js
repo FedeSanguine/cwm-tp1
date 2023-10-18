@@ -43,3 +43,40 @@ export function chatSubscribeToMessages(callback) {
         callback(data);
     });
 }
+
+
+    /*
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js"
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {  
+        apiKey: "AIzaSyD0Lo-2BdUF0pdw944OXd25fj3VCkP9ORg",
+        authDomain: "casa-cucha-d1802.firebaseapp.com",
+        projectId: "casa-cucha-d1802",
+        storageBucket: "casa-cucha-d1802.appspot.com",
+        messagingSenderId: "364775758918",
+        appId: "1:364775758918:web:7190eff3f90a975de2be47"
+      };
+
+      // Initialize Firebase
+      export const app = initializeApp(firebaseConfig);
+
+      // Obtener la instancia de Firestore.
+      export const db = getFirestore(app);
+
+      const refUser = collection(db, 'users');
+
+      const salida = document.getElementById('app');
+
+      onSnapshot(refUser, snapshot => {
+        salida.innerHTML += snapshot.docs.map(doc => 
+            `<div>
+              <div> <b>User: </b> ${doc.data().name}</div>
+              <div> <b>Email: </b> ${doc.data().email}</div>
+            </div>`
+          ).join('');
+      }); 
+    </script>
+ */
