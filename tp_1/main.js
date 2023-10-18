@@ -1,7 +1,7 @@
 // Creamos la aplicación de Vue.
 import {createApp} from "vue";
 import App from "./src/App.vue";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import router from "./src/router/router";
 const app = createApp(App);
 

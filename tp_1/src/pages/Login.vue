@@ -9,24 +9,25 @@ export default {
 
     <form action="#">
         <div class="mb-3">
-            <label for="email" class="block mb-1 font-bold">Email</label>
+            <label for="email" class="form-label">Email</label>
             <input
-                class=""
+                class="form-control"
                 type="email" 
                 id="email"
             >
         </div>
         <div class="mb-3">
-            <label for="password" class="block mb-1 font-bold">Contraseña</label>
+            <label for="password" class="form-label">Contraseña</label>
             <input
-                class=""
+                class="form-control"
                 type="password" 
                 id="password"
             >
         </div>
         <button
-            class=""
+            class="btn btn-success w-50"
             type="submit"
         >Ingresar</button>
     </form>
 </template>
+

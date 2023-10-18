@@ -5,28 +5,18 @@ export default {
 </script>
 
 <template>
-    <h1 class="mb-4 f">Crear Cuenta en DV Chat</h1>
+<h1 class="mb-3">Registro de usuario</h1>
 
     <form action="#">
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control">
+    </div>
         <div class="mb-3">
-            <label for="email" class="block mb-1 font-bold">Email</label>
-            <input
-                class=""
-                type="email" 
-                id="email"
-            >
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" id="password" name="password" class="form-control">
         </div>
-        <div class="mb-3">
-            <label for="password" class="block mb-1 font-bold">Contraseña</label>
-            <input
-                class=""
-                type="password" 
-                id="password"
-            >
-        </div>
-        <button 
-            class=""
-            type="submit"
-        >Crear Cuenta</button>
+        <button class="btn btn-success align-items-center" type="submit">Crear Cuenta</button>
     </form>
 </template>
+
