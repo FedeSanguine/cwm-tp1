@@ -44,23 +44,27 @@ export default {
         action="#"
         @submit.prevent="sendMessage"
     >
-        <div>
-            <label for="name">Usuario</label>
+        <div class="mb-3">
+            <label for="name" class="form-label">Usuario</label>
             <input
                 type="text"
                 id="name"
+                class="form-control"
                 v-model="newMessage.name"
             >
         </div>
-        <div>
-            <label for="email">Email</label>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
             <textarea
                 id="email"
+                class="form-control"
+                type="email"
                 v-model="newMessage.email"
             ></textarea>
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn btn-success w-50">Enviar</button>
     </form>
+
 
     <div>
         <div v-for="message in messages">
