@@ -1,9 +1,28 @@
 <script>
 import Chat from './pages/Chat.vue';
+import { subscribeToAuth, logout } from './services/auth.js';
 
 export default {
     name: "App",
-    components: {Chat}
+    components: { Chat },
+    data() {
+        return {
+            user: {
+                id: null,
+                email: null,
+            }
+        }
+    },
+    methods: {
+        handleLogout() {
+            logout();
+        }
+    },
+    mounted() {
+        subscribeToAuth(user => {
+            this.user = {...user};
+        });
+    }
 };
 </script>
 
@@ -28,12 +47,28 @@ export default {
                             <li class="nav-item">
                                 <router-link class="nav-link active" to="/chat">Chat</router-link>
                             </li>
+                            <template v-if="user.id === null">
                             <li class="nav-item">
                                 <router-link class="nav-link active" to="/registro">Registro</router-link>
                             </li>
                             <li class="nav-item">
                                 <router-link class="nav-link active" to="/iniciar-sesion">Iniciar Sesión</router-link>
                             </li>
+                        </template>
+                <template v-else>
+                    <li class="nav-item">
+                        <router-link class="nav-link active" to="/registro">Mi Perfil</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <form 
+                            action=""
+                            @submit.prevent="handleLogout"
+                        >
+                            <button  class="btn btn-dark " type="submit"><b>{{ user.email }}</b> (Cerrar Sesión)</button>
+                        </form>
+                    </li>
+                </template>
+                        
                         </ul>
                     </div>
                 </div>
