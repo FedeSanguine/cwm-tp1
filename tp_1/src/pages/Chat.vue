@@ -7,8 +7,8 @@ export default {
         return {
             messages: [],
             newMessage: {
-                user: '',
-                message: '',
+                name: '',
+                emaii: '',
             }
         }
     },
@@ -16,12 +16,13 @@ export default {
     methods: {
         sendMessage() {
             chatSaveMessage({
-                user: this.newMessage.user,
-                message: this.newMessage.message,
+                name: this.newMessage.name,
+                email: this.newMessage.email,
                 // ...this.newMessage // Podríamos haberlo escrito así, también.
             })
                 .then(() => {
-                    this.newMessage.message = '';
+                    this.newMessage.name = '';
+                    this.newMessage.email = '';
                 });
         }
     },
@@ -44,18 +45,18 @@ export default {
         @submit.prevent="sendMessage"
     >
         <div>
-            <label for="user">Usuario</label>
+            <label for="name">Usuario</label>
             <input
                 type="text"
-                id="user"
-                v-model="newMessage.user"
+                id="name"
+                v-model="newMessage.name"
             >
         </div>
         <div>
-            <label for="message">Mensaje</label>
+            <label for="email">Email</label>
             <textarea
-                id="message"
-                v-model="newMessage.message"
+                id="email"
+                v-model="newMessage.email"
             ></textarea>
         </div>
         <button type="submit">Enviar</button>
@@ -63,10 +64,11 @@ export default {
 
     <div>
         <div v-for="message in messages">
-            <div><b>Usuario:</b> {{ message.user }}</div>
-            <div><b>Mensaje:</b> {{ message.message }}</div>
+            <div><b>Usuario:</b> {{ message.name }}</div>
+            <div><b>Email:</b> {{ message.email }}</div>
         </div>
     </div>
+
 </template>
 
 
