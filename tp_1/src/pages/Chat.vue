@@ -1,5 +1,6 @@
 <script>
 import {chatSubscribeToMessages, chatSaveMessage} from "../services/chat.js";
+import { subscribeToAuth } from "../services/auth";
 
 export default {
     name: "Chat",
@@ -9,8 +10,11 @@ export default {
             newMessage: {
                 name: '',
                 emaii: '',
-            }
-        }
+            },
+            unsubscribeAuth: () => {},
+            unsubscribeChat: () => {},
+        };
+        
     },
 
     methods: {
@@ -28,9 +32,16 @@ export default {
     },
 
     mounted() {
-        chatSubscribeToMessages(messages => {
+        this.messagesLoading = true;
+        this.unsubscribeChat = chatSubscribeToMessages(messages => {
             this.messages = messages;
+            this.messagesLoading = false;
         });
+        this.unsubscribeAuth = subscribeToAuth(newUser => this.user = {...newUser});
+    },
+    unmounted() {
+       // this.unsubscribeChat();
+        this.unsubscribeAuth();
     }
 };
 </script>

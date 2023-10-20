@@ -20,7 +20,7 @@ export default {
     },
     mounted() {
         subscribeToAuth(user => {
-            this.user = {...user};
+            this.user = user;
         });
     }
 };
@@ -44,9 +44,6 @@ export default {
                             <li class="nav-item">
                                 <router-link class="nav-link active" to="/quienes-somos">Quiénes Somos</router-link>
                             </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link active" to="/chat">Chat</router-link>
-                            </li>
                             <template v-if="user.id === null">
                             <li class="nav-item">
                                 <router-link class="nav-link active" to="/registro">Registro</router-link>
@@ -57,8 +54,11 @@ export default {
                         </template>
                 <template v-else>
                     <li class="nav-item">
-                        <router-link class="nav-link active" to="/registro">Mi Perfil</router-link>
+                        <router-link class="nav-link active" to="/perfil">Mi Perfil</router-link>
                     </li>
+                    <li class="nav-item">
+                                <router-link class="nav-link active" to="/chat">Soporte</router-link>
+                            </li>
                     <li class="nav-item">
                         <form 
                             action=""
