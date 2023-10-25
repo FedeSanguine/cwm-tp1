@@ -31,7 +31,7 @@ export default {
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-has-center ">
                 <div class=" flex-end container">
                     <a class="navbar-brand" href="home">
-                        <img src="#" alt="logo CasaCucha">
+                        <img src="./img/logo.png" alt="logo CasaCucha">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Abrir/cerrar menú de navegación">
                         <span class="navbar-toggler-icon"></span>

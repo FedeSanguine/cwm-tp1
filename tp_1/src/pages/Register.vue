@@ -16,6 +16,10 @@ export default {
             <label for="password" class="form-label">Contraseña</label>
             <input type="password" id="password" name="password" class="form-control">
         </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Confirmar Contraseña</label>
+            <input type="password" id="password" name="password" class="form-control">
+        </div>
         <button class="btn btn-success align-items-center" type="submit">Crear Cuenta</button>
     </form>
 </template>

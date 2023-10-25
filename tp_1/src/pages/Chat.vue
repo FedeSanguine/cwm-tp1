@@ -47,9 +47,8 @@ export default {
 </script>
 
 <template>
-    <h1>Casa Cucha</h1>
+    <h1 class="mb-4">Soporte</h1>
 
-    <p>Leyendo los mensajes del chat, ahora en tiempo real</p>
 
     <form
         action="#"
@@ -65,7 +64,7 @@ export default {
             >
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Mensaje</label>
             <textarea
                 id="email"
                 class="form-control"
@@ -80,7 +79,7 @@ export default {
     <div>
         <div v-for="message in messages">
             <div><b>Usuario:</b> {{ message.name }}</div>
-            <div><b>Email:</b> {{ message.email }}</div>
+            <div><b>Mensaje:</b> {{ message.email }}</div>
         </div>
     </div>
 
