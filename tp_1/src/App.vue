@@ -42,7 +42,7 @@ export default {
                                 <router-link class="nav-link active" to="/">Home</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link class="nav-link active" to="/quienes-somos">Quiénes Somos</router-link>
+                                <router-link class="nav-link active" to="/quienes-somos">Mapa</router-link>
                             </li>
                             <template v-if="user.id === null">
                             <li class="nav-item">

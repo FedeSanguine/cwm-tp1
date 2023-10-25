@@ -57,7 +57,7 @@ export default {
             >
         </div>
         <button
-            class="btn btn-success w-50"
+            class="btn btn-success "
             type="submit"
         >Ingresar</button>
     </form>
