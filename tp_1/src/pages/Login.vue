@@ -41,6 +41,7 @@ export default {
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input
+                :disabled="loginLoading"
                 class="form-control"
                 type="email" 
                 id="email"
@@ -50,6 +51,7 @@ export default {
         <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
             <input
+                :disabled="loginLoading"
                 class="form-control"
                 type="password" 
                 id="password"
@@ -57,6 +59,7 @@ export default {
             >
         </div>
         <button
+            :loading="loginLoading"
             class="btn btn-success "
             type="submit"
         >Ingresar</button>
