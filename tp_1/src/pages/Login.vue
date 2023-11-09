@@ -23,7 +23,8 @@ export default {
             })
                 .then(user => {
                     // console.log('[Login.vue] User: ', user)
-                    this.$emit('login', {...user});
+                    //this.$emit('login', {...user});
+                    this.$router.push('/home')
                 })
                 .finally(() => {
                     this.loginLoading = false;
