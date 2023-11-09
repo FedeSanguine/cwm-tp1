@@ -17,7 +17,7 @@ export default {
             this.registerLoading = true;
             try {
                 await register({...this.newUser});
-                this.$router.push('/chat');
+                this.$router.push('/home')
             } catch (error) {
                 // TODO: Manejar el error.
             }
